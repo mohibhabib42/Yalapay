@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Deposits</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="users.js"></script>
+	</head>
+	<body class="dashboard">
+		<div class="bodywrapper">
+			<div class="nav">
+				<div class="user-img box-shadow">
+					<img src="./Assets/user-profile.png" alt="user" />
+				</div>
+				<div class="user-info box-shadow p-2 rounded">
+					<div>
+						<label>First Name</label>
+						<h3 class="user-value primary-color" id="fnamevalue"></h3>
+					</div>
+					<div>
+						<label>Last Name</label>
+						<h3 class="user-value primary-color" id="lnamevalue"></h3>
+					</div>
+					<div>
+						<label>Email</label>
+						<h3 class="user-value primary-color" id="emailvalue"></h3>
+					</div>
+				</div>
+				<div class="nav-items box-shadow p-1 rounded">
+					<a
+						onclick="window.location.replace('./DashBoard.html')"                    "
+						>Dashboard</a
+					>
+					<a onclick="window.location.replace('./Customers.html')">Customers</a>
+					<a onclick="window.location.replace('./Invoices.html')">Invoices</a>
+					<a class="active">Cheques</a>
+				</div>
+			</div>
+			<div class="main bg-color customers">
+                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <h2 class="Header primary-color m-0 pb-1" style="width:fit-content">Deposits</h2>
+                    <h4 onclick="openDepositModal()" class="Header primary-color m-0 pb-1 pointer" style="width:fit-content">...Create New +</h4>
+                </div>
+				<div id="deposit-list" class="main-customers-content rounded p-1">
+                    
+                   
+
+				</div>
+			</div>
+		</div>
+
+        <!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form style="width: max-content; margin: auto;" onsubmit="addDeposit(0,event)">
+        <div class="d-flex flex-column" style="gap:0.5rem">
+            
+            <div class="input-div">
+                <label for="account">Bank Account</label>
+                <select name="account" id="account">
+                </select>
+            </div>
+
+            <div class="input-div">
+                <label for="depositStatus">Deposit Status</label>
+                <select name="depositStatus" id="depositStatus">
+                    <option selected value="Deposited">Deposited</option>
+                    <option value="Cashed">Cashed</option>
+                </select>
+            </div>
+
+            <div class="input-div">
+                <label>Deposit Date</label>
+                <input type="date"  id="depositDate" required />
+            </div>
+
+            <div id="deposit-checks" id style="max-width: 500px;overflow-y: auto; padding: 0.5em;display: flex; flex-direction: row;gap: 0.5em" class="input-div">
+                <!-- <div class="invoices-list-item bg-primary-color white-color rounded p-1" >
+                    <label id="customer-name"></label>
+                    <label id="Customer-address"></label>
+                    <label id="Customer-email"></label>
+                    <div class='d-flex flex-row' style="gap: 0.5em">
+                        <button class="rounded">edit</button>
+                        <button class="rounded">Del</button>
+                    </div>
+                </div> -->
+
+            </div>
+
+            <button id="add-edit-deposit" class="bg-primary-color white-color pointer rounded p-1" style="text-align: center; "
+            type="submit">Add</button>
+
+        </div>
+      </form>
+    </div>
+  
+  </div>
+	</body>
+    <script src="index.js"></script>
+    <script src="./js/ChequeDeposits.js"></script>
+</html>

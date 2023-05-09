@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dashboard</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="users.js"></script>
+	</head>
+	<body class="dashboard">
+		<div class="bodywrapper">
+			<div class="nav">
+				<div class="user-img box-shadow">
+					<img src="./Assets/user-profile.png" alt="user" />
+				</div>
+				<div class="user-info box-shadow p-2 rounded">
+					<div>
+						<label>First Name</label>
+						<h3 class="user-value primary-color" id="fnamevalue"></h3>
+					</div>
+					<div>
+						<label>Last Name</label>
+						<h3 class="user-value primary-color" id="lnamevalue"></h3>
+					</div>
+					<div>
+						<label>Email</label>
+						<h3 class="user-value primary-color" id="emailvalue"></h3>
+					</div>
+				</div>
+				<div class="nav-items box-shadow p-1 rounded">
+					<a class="active">Dashboard</a>
+					<a onclick="window.location.replace('./Customers.html')">Customers</a>
+					<a onclick="window.location.replace('./Invoices.html')">Invoices</a>
+					<a onclick="window.location.replace('./ChequeDeposits.html')"
+						>Cheques</a
+					>
+				</div>
+			</div>
+			<div class="main bg-color">
+				<h2 class="Header primary-color m-0 pb-1">Summary</h2>
+				<div class="main-content">
+					<div class="container Invoices p-1 rounded">
+						<h3 class="Header grey-color p-0 m-0">Invoices</h3>
+						<div
+							class="container-info bg-primary-color white-color rounded p-1"
+						>
+							<div>
+								<label class="text-large upper-case text-semi-bold"
+									>Total</label
+								>
+								<label
+									class="text-large upper-case text-semi-bold"
+									id="total-invoices"
+									>0</label
+								>
+							</div>
+							<div>
+								<label class="text-small">Due within 30 days</label>
+								<label class="text-small" id="in-30-invoices">0</label>
+							</div>
+							<div>
+								<label class="text-small">Due in more than 30 days</label>
+								<label class="text-small" id="more-30-invoices">0</label>
+							</div>
+							<button
+								onclick="window.location.replace('./Invoices.html')"
+								style="float: right; padding: 0.5em"
+								class="pointer"
+							>
+								View Details
+							</button>
+						</div>
+					</div>
+
+					<div class="container Cheques p-1 rounded">
+						<h3 class="Header grey-color p-0 m-0">Cheques</h3>
+						<div
+							class="container-info bg-primary-color white-color rounded p-1"
+						>
+							<div>
+								<label class="text-large upper-case text-semi-bold"
+									>Awaiting</label
+								>
+								<label
+									class="text-large upper-case text-semi-bold"
+									id="Awaiting"
+									>0</label
+								>
+							</div>
+							<div>
+								<label class="text-small">Deposited</label>
+								<label class="text-small" id="Deposited">0</label>
+							</div>
+							<div>
+								<label class="text-small">Cashed</label>
+								<label class="text-small" id="Cashed">0</label>
+							</div>
+							<!-- <div>
+								<label class="text-small">Returned</label>
+								<label class="text-small" id="Returned"></label>
+							</div> -->
+							<button
+								onclick="window.location.replace('./ChequeDeposits.html')"
+								style="float: right; padding: 0.5em"
+								class="pointer"
+							>
+								View Details
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="./index.js"></script>
+	<script src="./js/Dashboard.js"></script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login Form</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="users.js"></script>
+		<script src="index.js"></script>
+	</head>
+	<body class="index">
+		<h2 class="primary-color">Login Page</h2>
+		<br />
+		<div class="login">
+			<form
+				class="d-flex justify-content-center align-item-center"
+				id="login"
+				onsubmit="login(event)"
+			>
+				<div
+					class="d-flex justify-content-center align-item-center flex-column"
+				>
+					<label class="primary-color"><b>User Name </b> </label>
+					<input
+						type="email"
+						name="Uname"
+						id="Uname"
+						placeholder="Username"
+						required
+					/>
+					<br /><br />
+					<label class="primary-color"><b>Password </b> </label>
+					<input
+						type="Password"
+						name="Pass"
+						id="Pass"
+						placeholder="Password"
+						required
+					/>
+					<br /><br />
+					<button
+						class="bg-primary-color white-color pointer"
+						type="submit"
+						name="log"
+						id="log"
+					>
+						Log In Here
+					</button>
+					<span id="error">Error</span>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

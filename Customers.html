@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Customers</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="users.js"></script>
+	</head>
+	<body class="dashboard">
+		<div class="bodywrapper">
+			<div class="nav">
+				<div class="user-img box-shadow">
+					<img src="./Assets/user-profile.png" alt="user" />
+				</div>
+				<div class="user-info box-shadow p-2 rounded">
+					<div>
+						<label>First Name</label>
+						<h3 class="user-value primary-color" id="fnamevalue"></h3>
+					</div>
+					<div>
+						<label>Last Name</label>
+						<h3 class="user-value primary-color" id="lnamevalue"></h3>
+					</div>
+					<div>
+						<label>Email</label>
+						<h3 class="user-value primary-color" id="emailvalue"></h3>
+					</div>
+				</div>
+				<div class="nav-items box-shadow p-1 rounded">
+					<a
+						onclick="window.location.replace('./DashBoard.html')"                    "
+						>Dashboard</a
+					>
+					<a class="active">Customers</a>
+					<a onclick="window.location.replace('./Invoices.html')">Invoices</a>
+					<a onclick="window.location.replace('./ChequeDeposits.html')">Cheques</a>
+				</div>
+			</div>
+			<div class="main bg-color customers">
+                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <h2 class="Header primary-color m-0 pb-1" style="width:fit-content">Customers</h2>
+                    <h4 onclick="openCustomerModal()" class="Header primary-color m-0 pb-1 pointer" style="width:fit-content">...Create New +</h4>
+                </div>
+				<div id="customers-list" class="main-customers-content rounded p-1">
+                    
+                   
+
+				</div>
+			</div>
+		</div>
+
+        <!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form style="width: max-content; margin: auto;" onsubmit="addCustomer(0,event)">
+        <div class="d-flex flex-column" style="gap:0.5rem">
+            
+            <div class="input-div">
+                <label>Company Name</label>
+                <input type="text"  id="Company-Name" required />
+            </div>
+
+            <div class="input-div">
+                <label>Address</label>
+                <input type="text"  id="Address" required />
+            </div>
+            
+            <div class="d-flex flex-row" style="gap: 1rem">
+                <div class="input-div">
+                    <label>First Name</label>
+                    <input type="text"  id="customer-fname" required />
+                </div>
+                <div class="input-div">
+                    <label>Last Name</label>
+                    <input type="text"  id="customer-lname" required />
+                </div>
+            </div>
+            
+            <div class="input-div">
+                <label>Mobile</label>
+                <input type="text"  id="Mobile" required />
+            </div>
+
+            <div class="input-div">
+                <label>Email</label>
+                <input type="text"  id="Customer-Email" required />
+            </div>
+
+            <button id="add-edit" class="bg-primary-color white-color pointer rounded p-1" style="text-align: center; "
+            type="submit">Add</button>
+
+        </div>
+      </form>
+    </div>
+  
+  </div>
+	</body>
+    <script src="index.js"></script>
+    <script src="./js/Customers.js"></script>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Invoices</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="users.js"></script>
+	</head>
+	<body class="dashboard">
+		<div class="bodywrapper">
+			<div class="nav">
+				<div class="user-img box-shadow">
+					<img src="./Assets/user-profile.png" alt="user" />
+				</div>
+				<div class="user-info box-shadow p-2 rounded">
+					<div>
+						<label>First Name</label>
+						<h3 class="user-value primary-color" id="fnamevalue"></h3>
+					</div>
+					<div>
+						<label>Last Name</label>
+						<h3 class="user-value primary-color" id="lnamevalue"></h3>
+					</div>
+					<div>
+						<label>Email</label>
+						<h3 class="user-value primary-color" id="emailvalue"></h3>
+					</div>
+				</div>
+				<div class="nav-items box-shadow p-1 rounded">
+					<a
+						onclick="window.location.replace('./DashBoard.html')"                    "
+						>Dashboard</a
+					>
+					<a 	onclick="window.location.replace('./Customers.html')"                    "
+                    >Customers</a>
+					<a  class="active">Invoices</a>
+					<a onclick="window.location.replace('./ChequeDeposits.html')" >Cheques</a>
+				</div>
+			</div>
+			<div class="main bg-color Invoices">
+                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <h2 class="Header primary-color m-0 pb-1" style="width:fit-content">Invoices</h2>
+                    <h4  onclick="addInvoiceModal()" class="Header primary-color m-0 pb-1 pointer" style="width:fit-content">...Create New +</h4>
+                </div>
+				<div id="invoices-list" class="main-invoices-content rounded p-1">
+                    
+                  <!-- <div class="invoices-list-item bg-primary-color white-color rounded p-1" >
+                        <label id="customer-name"></label>
+                        <label id="Customer-address"></label>
+                        <label id="Customer-email"></label>
+                        <div class='d-flex flex-row' style="gap: 0.5em">
+                            <button class="rounded">edit</button>
+                            <button class="rounded">Del</button>
+                        </div>
+                    </div> -->
+
+				</div>
+			</div>
+		</div>
+
+        <!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form style="width: max-content; margin: auto;" onsubmit="addInvoice(0,event)">
+        <div class="d-flex flex-column" style="gap:0.5rem">
+            
+            <div class="input-div">
+                <label for="invoice-customer">Customer</label>
+                <select  name="invoice-customer" id="invoice-customer">
+                    <option selected disabled>none</option>
+                </select>
+            </div>
+            
+            <div class="input-div">
+                <label>Amount</label>
+                <input type="text"  id="invoice-amount" required />
+            </div>
+
+            <div class="input-div">
+                <label>Invoice Date</label>
+                <input type="date"  id="invoice-date" required />
+            </div>
+
+            <div class="input-div">
+                <label>Due Date</label>
+                <input type="date"  id="due-date" required />
+            </div>
+
+            <button id="add-edit-invoice" class="bg-primary-color white-color pointer rounded p-1" style="text-align: center; "
+            type="submit">Add</button>
+
+        </div>
+      </form>
+    </div>
+  
+  </div>
+
+
+      <!-- The Modal -->
+<div id="paymentModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="closePayment">&times;</span>
+
+        <div class="paymentModal-content">
+            <div class="payment-list" id='payment-list'>
+
+                    <!-- <div class="invoices-list-item bg-primary-color white-color rounded p-1" >
+                        <label id="customer-name"></label>
+                        <label id="Customer-address"></label>
+                        <label id="Customer-email"></label>
+                        <div class='d-flex flex-row' style="gap: 0.5em">
+                            <button class="rounded">edit</button>
+                            <button class="rounded">Del</button>
+                        </div>
+                    </div> -->
+            </div>
+            <div class="payment-form">
+                <form style="width: 100% ; height: 100%; padding: 1em;" onsubmit='savePayment(event , 0)'>
+                    <div class="d-flex flex-column" style="gap:0.5rem">
+                        
+                        
+                        <div class="input-div">
+                            <label>Payment Amount</label>
+                            <input type="text"  id="Payment-amount" required />
+                        </div>
+            
+                        <div class="input-div">
+                            <label>Payment Date</label>
+                            <input type="date"  id="Payment-date" required />
+                        </div>
+            
+                        <div class="input-div">
+                            <label for="payment-mode">Mode of Payment</label>
+                            <select onchange="handleCheques(event)"  name="payment-mode" id="payment-mode">
+                                <option selected disabled>none</option>
+                                <option value="Credit Card" >Credit Card</option>
+                                <option value="Bank Transfer" >Bank Transfer</option>
+                                <option value="Cheque" >Cheque</option>
+                            </select>
+                        </div>
+
+                        <div  id='payment-input-container' class="d-flex flex-column" style="gap:0.5rem">
+
+
+                        </div>
+
+                        <button id="add-edit-invoice" class="bg-primary-color white-color pointer rounded p-1" style="text-align: center; "
+                        type="submit">Add</button>
+                        <p onclick="setPaymentValues(null)" class='pointer'>clear</p>
+                    </div>
+                  </form>
+            </div>
+        </div>
+      
+    </div>
+  
+  </div>
+
+
+	</body>
+    <script src="index.js"></script>
+    <script src="Banks.js"></script>
+    <script src="./js/Invoices.js"></script>
+</html>
